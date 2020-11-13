@@ -1,0 +1,41 @@
+<!--<p>
+  {{title2}}
+</p>-->
+
+<!-- <app-hero-detail [yaro]="selectedHero"></app-hero-detail> -->
+
+
+
+<div>
+<label class="heroes">Add hero</label>
+<input #heroName />
+<button (click) = "add(heroName.value); heroName.value =''">Add</button>
+</div>
+
+<!-- <div>
+  <ul  class="heroes">
+  <li *ngFor="let hero of listOfHeroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
+      <a routerLink = "/detail/{{hero.id}}">{{hero.name}}</a>
+  </li>
+  </ul>
+  </div> -->
+
+  <ul class="heroes">
+    <li *ngFor="let hero of listOfHeroes">
+      <a routerLink="/detail/{{hero.id}}">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+      </a>
+      <button class="delete" title="delete hero"
+      (click)="delete(hero)">x</button>
+    </li>
+  </ul>
+
+<!-- <div>
+  <ul  class="heroes">
+  <li *ngFor="let heros of additionalHero" [class.selected]="heros === selectedHero" (click)="onSelect(heros)">
+      <p>{{heros.name}}</p>
+  </li>
+  </ul>
+  </div> -->
+
+  
